@@ -40,19 +40,14 @@ var xetrov = {
 
         navbar: {
             init() {
-                console.log(xetrov.curPage);
                 $(".navbar ul li").on("click", function (e) {
                     var arr = e.target.id.split("-");
                     var name = arr[arr.length - 1];
-                    console.log(xetrov.curPage);
                     var activeEle = $("#navbar-" + name)[0];
                     $("#navbar-title")[0].innerHTML = name.substring(0, 1).toUpperCase() + name.substring(1);
                     xetrov.changeContent(name);
                 })
-
             },
-
-
         },
 
         hamburger: {
