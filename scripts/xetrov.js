@@ -1,6 +1,6 @@
-var tetria = {
+var xetrov = {
     modules: {},
-    curPage: "welcome",
+    curPage: "home",
     debug: true,
     curscroll: 1,
     /**
@@ -36,47 +36,23 @@ var tetria = {
         init() {
             this.hamburger.init();
             this.navbar.init();
-            this.url.init();
-            this.profbar.init();
-            this.welcome.init();
-        },
-
-        url: {
-            init() {
-                // TODO
-            },
         },
 
         navbar: {
             init() {
-                console.log(this.curPage);
+                console.log(xetrov.curPage);
                 $(".navbar ul li").on("click", function (e) {
-                    if (e.target.id == "play-tetria" || e.target.id == "navbar-Play") return;
                     var arr = e.target.id.split("-");
                     var name = arr[arr.length - 1];
+                    console.log(xetrov.curPage);
                     var activeEle = $("#navbar-" + name)[0];
                     $("#navbar-title")[0].innerHTML = name.substring(0, 1).toUpperCase() + name.substring(1);
-                    tetria.changeContent(name);
+                    xetrov.changeContent(name);
                 })
 
             },
 
 
-        },
-
-        profbar: {
-            init() {
-                this.play();
-            },
-            play() {
-                $("#play-tetria").on("click", function (e) {
-                    window.location.href = '../game/index.html';
-                });
-
-                $("#navbar-list").on("click", function(e) {
-                    $("#navbar-list")[0].classList.add("mobile-hide");
-                });
-            }
         },
 
         hamburger: {
@@ -87,32 +63,10 @@ var tetria = {
                 });
             },
         },
-
-        welcome: {
-            incContent() {
-                console.log("Triggered");
-                $("#welcome-" + tetria.curscroll) .addClass("scroll-hide");
-                if(tetria.curscroll === 4){tetria.curscroll = 1}else{tetria.curscroll++};
-                $("#welcome-" + tetria.curscroll).removeClass("scroll-hide");
-            },
-            decContent() {
-                console.log("Triggered");
-                $("#welcome-" + tetria.curscroll).addClass("scroll-hide");
-                if(tetria.curscroll === 1){tetria.curscroll = 4}else{tetria.curscroll--};
-                $("#welcome-" + tetria.curscroll).removeClass("scroll-hide");
-            },
-            init() {
-                $("#scroll-left").click(this.decContent);
-                $("#scroll-right").click(this.incContent);
-            }
-        },
     },
 
-    utils: {
-
-    }
 };
 
 $(document).ready(function (e) {
-    tetria.init();
+    xetrov.init();
 });

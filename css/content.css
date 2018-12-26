@@ -18,48 +18,6 @@
     margin: auto;
 }
 
-/*WELCOME*/
-
-#content-welcome #welcome-scrollbar{
-    position: relative; 
-    border: 1px solid black;
-    overflow: hidden;
-    height: 75%;
-    width: 100%;
-}
-
-#content-welcome #welcome-scrollbar .scroll-hide{
-    display: none !important;
-}
-
-#content-welcome #welcome-scrollbar div .scroll-content{
-    display: inline-block; 
-    height: 100px;
-    width: 100px;
-}
-
-#content-welcome #welcome-scrollbar .scroll-arrows{
-    height: 100px;
-    width: 100px;
-    display: inline-block !important;
-    cursor: pointer;
-}
-
-#content-welcome #welcome-scrollbar div #scroll-left{
-    left:0;
-    float: left;
-}
-
-#content-welcome #welcome-scrollbar div #scroll-right{
-    right:0;
-    float: right;
-}
-
-#content-welcome #welcome-scrollbar #set img .scroll-show{
-    height: 10%;
-    width: 10%;
-}
-
 #content-welcome .subtitle{
     margin: 20px;
 }
