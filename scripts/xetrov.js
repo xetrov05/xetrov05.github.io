@@ -14,18 +14,18 @@ var xetrov = {
      * Change the content shown to the content specified. Affects navbar and content-area.
      */
     changeContent(newContent) {
-        newContent = newContent.toLowerCase();
         var prevEle = $("#content-area #content-" + this.curPage)[0];
         var curEle = $("#content-area #content-" + newContent)[0];
         var prevNav = $("#navbar-" + this.curPage)[0];
         var curNav = $("#navbar-" + newContent)[0];
         if (prevEle == null || curEle == null) { console.log("Error trying to change content"); if (this.debug) { console.trace() } return; }
+        console.log(prevNav);
+        console.log(curNav);
         prevEle.classList.toggle("hide");
         curEle.classList.toggle("hide");
         try {
-            if (prevNav !== undefined)
-                prevNav.classList.toggle("active");
-            curNav.classList.toggle("active");
+            prevNav.classList.remove("active");
+            curNav.classList.add("active");
         } catch (e) {
             console.log(e);
         }

@@ -32,12 +32,15 @@ body {
     text-decoration: none;
     color: black;
 }
-
-.navbar ul li>a:hover {
-    background-color: #aaa;
+.navbar ul li>a {
+    background-color: #ddd;
 }
 
 .navbar ul li>a.active {
+    background-color: #aaa;
+}
+
+.navbar ul li>a:hover {
     background-color: #bebebe;
 }
 
