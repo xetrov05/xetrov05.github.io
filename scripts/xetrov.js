@@ -1,18 +1,22 @@
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(196,232,255,0.4)";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+    document.body.style.backgroundColor = "rgb(196,232,255)";
+}
 var xetrov = {
-    modules: {},
     curPage: "home",
-    debug: true,
-    curscroll: 1,
-    /**
-     * Call on page load.
-     */
     init() {
         this.components.init();
     },
 
-    /** 
-     * Change the content shown to the content specified. Affects navbar and content-area.
-     */
     changeContent(newContent) {
         var prevEle = $("#content-area #content-" + this.curPage)[0];
         var curEle = $("#content-area #content-" + newContent)[0];
@@ -34,28 +38,18 @@ var xetrov = {
 
     components: {
         init() {
-            this.hamburger.init();
             this.navbar.init();
         },
 
         navbar: {
             init() {
-                $(".navbar ul li").on("click", function (e) {
+                $(".sidenav a").on("click", function (e) {
                     var arr = e.target.id.split("-");
                     var name = arr[arr.length - 1];
                     var activeEle = $("#navbar-" + name)[0];
-                    $("#navbar-title")[0].innerHTML = name.substring(0, 1).toUpperCase() + name.substring(1);
                     xetrov.changeContent(name);
+                    closeNav()
                 })
-            },
-        },
-
-        hamburger: {
-            init() {
-                // navbar hamburger show navbar
-                $("#navbar-hamburger").on("click", function (e) {
-                    $(".navbar ul")[0].classList.toggle("mobile-hide");
-                });
             },
         },
     },

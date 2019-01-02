@@ -6,33 +6,35 @@
     <title>Xetrov's page</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/content.css">
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <script src="scripts/jquery.js"></script>
     <script src="scripts/xetrov.js"></script>
 </head>
 
 <body>
-    <div class="container">
-        <div class="navbar">
-            <div id="navbar-hamburger" class="hamburger">
-                <div class="hamburger-bar1"></div>
-                <div class="hamburger-bar2"></div>
-                <div class="hamburger-bar3"></div>
-            </div>
-            <div id="navbar-title" class="mobile">
-                Welcome
-            </div>
-            <ul class="mobile-hide" id="navbar-list">
-                <li>
-                    <a href="#" id="navbar-home">Home</a>
-                </li>
-                <li>
-                    <a href="#" id="navbar-TTspr19">Jstris Spring '19 Tournament</a>
-                </li>
-            </ul>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#" id="navbar-home">Home</a>
+        <a href="#" id="navbar-TTspr19">Jstris Spring '19 Tournament</a>
+    </div>
+
+    <!-- Use any element to open the sidenav -->
+    <span onclick="openNav()">
+        <div id="navbar-hamburger" class="hamburger">
+            <div class="hamburger-bar1"></div>
+            <div class="hamburger-bar2"></div>
+            <div class="hamburger-bar3"></div>
         </div>
-        <div id="content-area">
-            <div id="content-home">home</div>
-            <div id="content-TTspr19" class="hide">Hello</div>
+    </span>
+
+    <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+    <div id="main">
+        <div class="container">
+            <div id="content-area">
+                <div id="content-home">home</div>
+                <div id="content-TTspr19" class="hide">Hello</div>
+            </div>
         </div>
     </div>
+
 </body>
