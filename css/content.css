@@ -9,7 +9,18 @@
     padding: 20px 0;
 }
 
+.sub-title{
+    display:flex;
+    justify-content: center;
+}
+
+.sub-title div{
+    font-size: 30px;
+    padding: 15px 0;
+}
+
 #content-area {
+    width: 100%;
     font-family: "Verdana", Helvetica, sans-serif;
     display: inline-block;
     text-align: center !important;
@@ -18,9 +29,7 @@
     margin: auto;
 }
 
-#content-welcome .subtitle{
-    margin: 20px;
-}
-#set{
-    width:100%;
+#content-area div div{
+    width: 80%;
+    margin: 0% 10% 0% 10%;
 }

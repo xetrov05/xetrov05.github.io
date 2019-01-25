@@ -1,20 +1,18 @@
-/* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-    document.body.style.backgroundColor = "rgba(196,232,255,0.4)";
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)', "i"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
-/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
-    document.body.style.backgroundColor = "rgb(196,232,255)";
-}
-var xetrov = {
+var main = {
     curPage: "home",
     init() {
         this.components.init();
+        this.page.init()
     },
 
     changeContent(newContent) {
@@ -23,8 +21,6 @@ var xetrov = {
         var prevNav = $("#navbar-" + this.curPage)[0];
         var curNav = $("#navbar-" + newContent)[0];
         if (prevEle == null || curEle == null) { console.log("Error trying to change content"); if (this.debug) { console.trace() } return; }
-        console.log(prevNav);
-        console.log(curNav);
         prevEle.classList.toggle("hide");
         curEle.classList.toggle("hide");
         try {
@@ -35,10 +31,20 @@ var xetrov = {
         }
         this.curPage = newContent;
     },
-
+    page: {
+        init() {
+            document.getElementById("sidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+    },
     components: {
         init() {
             this.navbar.init();
+            const sectionsId = Object.values($("#content-area").children().map(function () { return this.id.split("-")[this.id.split("-").length - 1] }));
+            const start = getParameterByName('target');
+            if (sectionsId.includes(start)) {
+                main.changeContent(start);
+            }
         },
 
         navbar: {
@@ -47,8 +53,7 @@ var xetrov = {
                     var arr = e.target.id.split("-");
                     var name = arr[arr.length - 1];
                     var activeEle = $("#navbar-" + name)[0];
-                    xetrov.changeContent(name);
-                    closeNav()
+                    main.changeContent(name);
                 })
             },
         },
@@ -57,5 +62,5 @@ var xetrov = {
 };
 
 $(document).ready(function (e) {
-    xetrov.init();
+    main.init();
 });
