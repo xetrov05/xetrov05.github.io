@@ -13,3 +13,17 @@ body {
 .hide {
     display: none !important;
 }
+
+
+
+#hamburger :hover{
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 6px;
+    transition: 0.4s;
+}

@@ -13,11 +13,18 @@
 
 <body>
     <div id="sidenav" class="sidenav">
+        <a href="javascript:void(0)"class="closebtn" onclick="closeNav()">&times;</a>
         <a href="#" id="navbar-home">Home</a>
         <a href="#" id="navbar-jstris19">Jstris Spring '19 Tournament</a>
     </div>
 
-    <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+    <span id= "hamburger" onclick="openNav()">
+        <div id="navbar-hamburger" class="hamburger">
+            <div class="hamburger-bar1"></div>
+            <div class="hamburger-bar2"></div>
+            <div class="hamburger-bar3"></div>
+        </div>
+    </span>
     <div id="main">
         <div class="container">
             <div id="content-area">
@@ -27,8 +34,6 @@
                     </div>
                     <div>Welcome to this webpage for MY usage. MY usage. Do you hear that? Move along: Nothing to see here...</div>
                 </div>
-
-
                 <div id="content-jstris19" class="hide">
                     <div class="content-title">
                         <div>Xetrov's Jstris Tournament 2019</div>
@@ -40,31 +45,34 @@
                         <Google Form />
                         <p>However, please make sure you have read the information below first:</p>
                     </div>
-                    <div class="sub-title"><div>Format</div></div>
+                    <div>Rules and Important Information</div>
                     <div>
-                        <p>There will be two stages in the tournament:</p>
-                        <p>
-                            <ol>
-                                <li> <b>A group stage</b>, where participants are split into groups of 5, where the top 2 players in each group will qualify for the next stage. Each group and it's players will be put in a table, where a win awards 3 points, and a loss awards 0 points. Participants in each group will play each other EXACTLY once, first to
-                                    10. </li>
-                                <li> <b>A knockout stage</b>  It is single elimination </li>
-                            </ol>
-                        </p>
-                        <div>To confirm scores, </div>
-                    </div>
-                    <div>Rules</div>
-                    <div>
-                        <ol>
-                            <li>
-
-                            </li>
-                        </ol>
+                            <div>
+                                    <p>There will be two stages in the tournament:</p>
+                                    <p>
+                                        <ol>
+                                            <li>
+                                                <p>
+                                                    <b>A group stage,</b> where participants are split into groups of 5*. The groups will
+                                                    be chosen by me. I will put my best efforts to place a mix of players at different
+                                                    skill levels in each group, and to split up players of the same skill level. Each
+                                                    group and it's players will be put in a table. Participants in each group will play
+                                                    each other EXACTLY once, first to 10. where a win awards 3 points, and a loss awards
+                                                    0 points. When all players have played each of their matches, the top two* players
+                                                    with the most points will qualify to play in the secnond stage. </p>
+                                                <p>
+                                                    <b>*</b>This is subject to change, depending on the number of entrants.
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <b>A knockout stage,</b> where the qualifying players from Stage 1 will play. The layout wll be single elimination until there are four players left remaining, which then will be double elimination. </li>
+                                        </ol>
+                                    </p>
+                                </div>
 
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-
 </body>
