@@ -6,10 +6,11 @@
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
-    background-color: #111; /* Black*/
+    background-color: black; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    font-family: 'Arial', sans-serif;
   }
   
   /* The navigation menu links */
@@ -34,6 +35,10 @@
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
+  }
+
+  .sidenav div a{
+    margin-left: 40px;
   }
   
   /* Style page content - use this if you want to push the page content to the right when you open the side navigation */

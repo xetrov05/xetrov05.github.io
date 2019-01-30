@@ -4,10 +4,9 @@ body {
     background: #c4e8ff;
 }
 
-.container {
+#main {
     height: 100%;
     width: 100%;
-
 }
 /* misc */
 .hide {
@@ -20,6 +19,9 @@ body {
     cursor: pointer;
 }
 
+#hamburger{
+    margin-left: 4%;
+}
 .hamburger div {
     width: 35px;
     height: 5px;
