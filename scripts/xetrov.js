@@ -1,13 +1,17 @@
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
 function openNav() {
-    document.getElementById("sidenav").style.width = "250px";
-    document.body.style.backgroundColor = "rgba(196,232,255,0.9)";
+    $("#sidenav").css({"width":"250px" , "backgroundColor": "rgba(102, 95, 95, 0.2)"});
+    $("body").css("backgroundColor", "rgba(196,232,255,0.7)");
+    $("#main").css("marginLeft", "250px");
+    $("#hamburger").hide();
 }
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
 function closeNav() {
-    document.getElementById("sidenav").style.width = "0";
-    document.body.style.backgroundColor = "rgb(196,232,255)";
+    $("#sidenav").css("width","0px");
+    $("body").css("backgroundColor","rgb(196,232,255)");
+    $("#main").css("marginLeft", "0px");
+    $("#hamburger").show();
 }
 
 function getParameterByName(name, url) {
