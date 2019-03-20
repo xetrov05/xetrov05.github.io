@@ -6,7 +6,8 @@ body {
 
 #main {
     height: 100%;
-    width: 100%;
+    width: calc(85% - 250px);
+    margin-left: 350px;
 }
 /* misc */
 .hide {

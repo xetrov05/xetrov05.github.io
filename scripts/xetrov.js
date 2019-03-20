@@ -1,19 +1,3 @@
-/* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
-function openNav() {
-    $("#sidenav").css({"width":"250px" , "backgroundColor": "rgba(102, 95, 95, 0.2)"});
-    $("body").css("backgroundColor", "rgba(196,232,255,0.7)");
-    $("#main").css("marginLeft", "250px");
-    $("#hamburger").hide();
-}
-
-/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
-function closeNav() {
-    $("#sidenav").css("width","0px");
-    $("body").css("backgroundColor","rgb(196,232,255)");
-    $("#main").css("marginLeft", "0px");
-    $("#hamburger").show();
-}
-
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, '\\$&');
@@ -51,6 +35,7 @@ var main = {
         init() {
             this.navbar.init();
 
+            //Query String Manipulaton
             const sectionsId = Object.values($("#content-area").children().map(function () { return this.id.split("-")[this.id.split("-").length - 1] }));
             const start = getParameterByName('target');
             if (sectionsId.includes(start)) {
@@ -61,12 +46,12 @@ var main = {
         navbar: {
             init() {
                 $(".sidenav a").not(".closebtn").on("click", function (e) {
-                    closeNav()
-                    var arr = e.target.id.split("-");
-                    var name = arr[arr.length - 1];
-                    var activeEle = $("#navbar-" + name)[0];
-                    main.changeContent(name);
-                    closeNav();
+                    if (e.target.classList[0] !== "nil") {
+                        var arr = e.target.id.split("-");
+                        var name = arr[arr.length - 1];
+                        var activeEle = $("#navbar-" + name)[0];
+                        main.changeContent(name);
+                    }
                 })
             },
         },
