@@ -8,7 +8,12 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
+function showlist() {
+    document.getElementById("langlist").classList.toggle("hide");
+}
+
 var main = {
+    lang: "en",
     curPage: "home",
     init() {
         this.components.init();
