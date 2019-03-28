@@ -12,135 +12,189 @@
 </head>
 
 <body>
-    <div id="sidenav" class="sidenav">
-        <div class="dropdown">
-            <button onclick="showlist()" class="droplang">Set Language</button>
-            <div id="langlist" class="dropdown-content hide">
-                <a href="#">EN</a>
-                <a href="#">EN</a>
-                <a href="#">EN</a>
-            </div>
+    <div class="dropdown">
+        <button onclick="showlist()" class="drop">Set Language</button>
+        <div id="langlist" class="dropdown-content hide">
+            <a onclick="changeLang('en')">EN</a>
+            <a onclick="changeLang('zh-han')">中文（繁體）</a>
         </div>
-        <a href="#" id="navbar-home">Home</a>
-        <a href="#" id="navbar-jstris19">Jstris Spring '19 Tournament</a>
-        <div>
-            <a href="#" id="navbar-jstris19info">Rules</a>
+    </div>
+    <div id="sidenav" class="sidenav">
+        <a href="#" id="navbar-home" class="en">Home</a>
+        <a href="#" id="navbar-home" class="zh-han">主頁</a>
+        <a href="#" id="navbar-jstris19" class="en">Jstris Spring '19 Tournament</a>
+        <a href="#" id="navbar-jstris19" class="zh-han">Xetrov 的 Jstris春天2019比賽</a>
+        <div class="en">
+            <a href="#" id="navbar-jstris19info">Rules and Informaton</a>
             <a href="#" id="navbar-jstris19tables">Participants and Tables</a>
         </div>
+        <div class="zh-han">
+            <a href="#" id="navbar-jstris19info">規則及資料</a>
+            <a href="#" id="navbar-jstris19tables">比賽參賽者及進度</a>
+        </div>
         <a href="tetris.html" class="nil">Tetris Clone</a>
+        <a href="#" id="navbar-credits" class="en">Credits</a>
+        <a href="#" id="navbar-credits" class="zh-han">感謝</a>
     </div>
     <div id="main">
         <div id="content-area">
             <div id="content-home">
-                <div class="content-title">
+                <div class="content-title en">
                     <div>Welcome</div>
                 </div>
-                <div>Welcome to this webpage for MY usage. MY usage. Do you hear that? Move along: Nothing to see
-                    here...</div>
+                <div class="content-title zh-han">
+                    <div>歡迎</div>
+                </div>
+                <p class="en">Welcome to this webpage for MY usage. MY usage. Do you hear that? Move along: Nothing to see here...
+                </p>
+                <p class="zh-han">歡迎來給我用的網站。給我用的。聽到了嗎？好…走吧…</p>
             </div>
             <div id="content-jstris19" class="hide">
-                <div class="content-title">
+                <div class="content-title en">
                     <div>Xetrov's Jstris Tournament 2019</div>
                 </div>
+                <div class="content-title zh-han">
+                    <div>Xetrov 的 Jstris春天2019比賽</div>
+                </div>
                 <div>
-                    <p>
-                        Hello There! If you are here, then I am assuming you want to sign up to the tournament. To sign
-                        up, please use this Google
-                        Form to sign up.</p>
-                    <Google Form />
-                    <p>However, please make sure you have read the information below first:</p>
+                    <p class="en">
+                        Hello There! If you are here, then I am assuming you want to sign up to the tournament. More Information can be found by
+                        navigating the navbar to the side.</p>
+                    <p class="zh-han">
+                        你好！如果你來看本網頁，表示你應該想登記參加我的「Jstris春天2019比賽」，對吧？如果是，請查看那邊的連結以獲取更多資訊。</p>
                 </div>
             </div>
             <div id="content-jstris19info" class="hide">
-                <div class="content-title">
+                <div class="content-title en">
                     <div>Xetrov's Jstris Tournament 2019 - The Rules and relevant Informations </div>
                 </div>
+                <div class="content-title zh-han">
+                    <div>Xetrov 的 Jstris春天2019比賽 ～ 規則及資料</div>
+                </div>
                 <div>
-                    <div class="ssub-title">
+                    <div class="ssub-title en">
                         <div>Format</div>
                     </div>
-                    <p>There will be two stages in the tournament:</p>
-                    <p>
-                        <ol>
-                            <li>
-                                <p>
-                                    <b>A group stage,</b> where participants are split into groups of 5*. The groups
-                                    will be
-                                    chosen by me. I will put my best efforts to place a mix of players at different
-                                    skill
-                                    levels in each group, and to split up players of the same skill level. Each group
-                                    and
-                                    it's players will be put in a table. Participants in each group will play each other
-                                    EXACTLY once, first to 10. where a win awards 3 points, and a loss awards 1 point.
-                                    When
-                                    all players have played each of their matches, the top two* players with the most
-                                    points
-                                    will qualify to play in the second stage. </p>
-                                <p>
-                                    <b>*</b>This is subject to change, depending on the number of entrants.
-                                </p>
-                            </li>
-                            <li>
-                                <b>A knockout stage,</b> where the qualifying players from Stage 1 will play. The layout
-                                will
-                                be single elimination until there are eight players left remaining, when the tournament
-                                will
-                                be double elimination. </li>
-                        </ol>
-                    </p>
-                </div>
-                <div class="ssub-title">
-                    <div>Rules</div>
-                </div>
-                <div>
-                    <ul>
+                    <div class="ssub-title zh-han">
+                        <div>比賽形式</div>
+                    </div>
+                    <p class="en">There will be two stages in the tournament:</p>
+                    <p class="zh-han">本次比賽分為兩段：</p>
+                    <ol class="en">
                         <li>
-                            It goes without saying:
-                            <b></b>All games must be played on the platform
-                            <a href="https://www.jstris.jezevec10.com" target="_blank">Jstris</a>
-                            </b>
+                            <b>A group stage,</b> where participants are split into groups of 5*. The groups will be chosen
+                            by me. I will put my best efforts to place a mix of players at different skill levels in each
+                            group, and to split up players of the same skill level. Each group and it's players will be put
+                            in a table. Participants in each group will play each other EXACTLY once, first to 10. where
+                            a win awards 3 points, and a loss awards 1 point. When all players have played each of their
+                            matches, the top two* players with the most points will qualify to play in the second stage.
+                            </br>
+                            <b>*</b>This is subject to change, depending on the number of entrants.
                         </li>
                         <li>
-                            To be eligible to sign up, you must have an
-                            <a href="https://jstris.jezevec10.com/?play=5" target="_blank">Ultra</a> and
-                            <a href="https://jstris.jezevec10.com/?play=1&mode=1">40L Sprint</a> on your Jstris account
-                            so that I can determine where to put players in the tournament
-                            tables.
+                            <b>A knockout stage,</b> where the qualifying players from Stage 1 will play. The layout will be
+                            single elimination until there are eight players left remaining, when the tournament will be
+                            double elimination. </li>
+                    </ol>
+                    <ol class="zh-han">
                         <li>
-                            Scheduling of games will be solely done by participants. It will be expected of everyone to
-                            play all of their games before
+                            <b>第一段</b>、所有參賽者分為小組賽。每小組有5*個參賽者。每一個參賽者會跟其他在小組裡面的參賽者打一場（搶10）
+                            </br>
+                            <b>*</b>This is subject to change, depending on the number of entrants.
+                        </li>
+                        <li>
+                            <b>第二段</b>、第一段的最強兩位參賽者會出現至第二段。參賽者會打Knock Out Stage。（搶15，除了四強~搶20 和 決賽~搶25） </li>
+                    </ol>
+                </div>
+                <div class="ssub-title en">
+                    <div>Rules</div>
+                </div>
+                <div class="ssub-title zh-han">
+                    <div>規則</div>
+                </div>
+                <ul class="en">
+                    <li>
+                        It goes without saying:
+                        <b></b>All games must be played on the platform
+                        <a href="https://www.jstris.jezevec10.com" target="_blank">Jstris</a>
+                        </b>
+                    </li>
+                    <li>
+                        To be eligible to sign up, you must have an
+                        <a href="https://jstris.jezevec10.com/?play=5" target="_blank">Ultra</a> and
+                        <a href="https://jstris.jezevec10.com/?play=1&mode=1">40L Sprint</a> on your Jstris account so that I can determine where to put players in the tournament
+                        tables.
+                        <li>
+                            Scheduling of games will be solely done by participants. It will be expected of everyone to play all of their games before
                             the deadlines given.
                         </li>
                         <li>
-                            All players will have one week to play each game.
+                            <del>All players will have one week to play each game.</del>
                         </li>
                         <li>
-                            Deadlines are to be placed on this website (so be sure to check this site), and announced on
-                            Discord. Any players failing
-                            to play all of their matches before the deadline, unless they are evidently not at fault
-                            (i.e. the opponent was absent), will be given an instant disqualification.
+                            Deadlines are to be placed on this website (so be sure to check this site), and announced on Discord. Any players failing
+                            to play all of their matches before the deadline, unless they are evidently not at fault (i.e.
+                            the opponent was absent), will be given an instant disqualification.
                         </li>
                         <li>
                             All players
-                            <b>must</b> have a Jstris account. This will be requested for when you sign up for the
-                            tournament
+                            <b>must</b> have a Jstris account. This will be requested for when you sign up for the tournament
                             via the Google Form.
                         </li>
-                    </ul>
-                </div>
-                Are you happy with how this tournament will proceed? If so, please sign up here:
+                        <li>
+                            To report scores from matches, please contact me though a method mentioned in this article.
+                        </li>
+                        <li>
+                            To contact me, please use Discord: "xetrov#0272".
+                        </li>
+                        <li>
+                            All participants are suggested to join this discord server:
+                            <a href="https://discord.gg/Sfkmf9P">https://discord.gg/Sfkmf9P</a>
+                        </li>
+                </ul>
+                <ul class="zh-han">
+                    <li>
+                        所有戰局都會在
+                        <a href="https://www.jstris.jezevec10.com" target="_blank">Jstris</a>平台玩。
+
+                    </li>
+
+                    為了讓方便我排序比賽順序與級別，請登記此賽的玩家必須要有 備註 40L 競速 和 Ultra 模式的成績。
+                    <li>
+                        玩家們必須要能預定私下約時間打場合。每個禮拜的比賽期限會公告在此網站(所以請務必要在此留意) [跟在Discord公告]。如果有任何玩家沒辦法在期限內打完比賽(除非是對手沒出現等等情況)會被取消資格。
+                    </li>
+                    <li>
+                        玩家們必須要能預定私下約時間打場合。每個禮拜的比賽期限會公告在此網站(所以請務必要在此留意)
+                        <!--跟在Discord公告]-->。如果有任何玩家沒辦法在期限內打完比賽(除非是對手沒出現等等情況)會被取消資格。
+                    </li>
+                    <li>
+                        所有參賽者
+                        <b>必須</b>要有Jstris平台帳戶。登記表會要求這些資料的。
+                    </li>
+                    <li>打完場合之後，請報告結果給我，用本網頁提一個方法聯絡。</li>
+                    <li>
+                        如果你需要聯絡我，請使用Discord："xetrov#0272”
+                    </li>
+                    <li>
+                        為了讓大家方便預定私下約時間打場合，我建議各位參賽者加入這伺服器
+                        <a href="https://discord.gg/Sfkmf9P">https://discord.gg/Sfkmf9P</a>
+                    </li>
+                </ul>
+                <p class="en">Are you happy with how this tournament will proceed? If so, please sign up here:</p>
+                <p class="zh-han">想參加嗎？如果是，請在這裡登記</p>
+                <a class="en" href="https://docs.google.com/forms/d/1ddIwl17RQWqZF_xvjCixToN2kqNQ4WEQynVIeZ4FTCw/edit">English</a>
                 <br />
-                <a
-                    href="https://docs.google.com/forms/d/1ddIwl17RQWqZF_xvjCixToN2kqNQ4WEQynVIeZ4FTCw/edit">English</a><br />
-                <a
-                    href="https://docs.google.com/forms/d/1UU4dKoR1hysmNrEsLcSzszxaHSXRRpOFsSb85e-6Ykc/edit?usp=drive_web">中文（繁體）</a>
-                <br />
-                Please note that the registration deadline is Monday 8th April 2019
+                <a class="zh-han" href="https://docs.google.com/forms/d/1UU4dKoR1hysmNrEsLcSzszxaHSXRRpOFsSb85e-6Ykc/edit?usp=drive_web">中文（繁體）</a>
+                <p class="en">Please note that the registration deadline is Monday 8th April 2019</p>
+                <p class="zh-han">請注意：此賽登記的期限為4月8日（週一）</p>
 
             </div>
             <div id="content-jstris19tables" class="hide">
-                <div class="content-title">
+                <div class="content-title en">
                     <div>Xetrov's Jstris Tournament 2019 - Partcipants and Progress </div>
+                </div>
+                <div class="content-title zh-han">
+                    <div>Xetrov 的 Jstris春天2019比賽 ～ 比賽參賽者及進度</div>
                 </div>
                 <table>
                     <tr>
@@ -201,6 +255,18 @@
                         <td>0</td>
                     </tr>
                 </table>
+            </div>
+            <div id="content-credits" class="hide">
+                <div class="content-title en">
+                    <div>Thanks to:</div>
+                </div>
+                <div class="content-title zh-han">
+                    <div>感謝:</div>
+                </div>
+                <p class="en">
+                    Thanks to Pokedialga for helping me translate into Chinese</p>
+                <p class="zh-han">感謝Pokedialga幫我翻譯成中文
+                    <p>
             </div>
         </div>
     </div>

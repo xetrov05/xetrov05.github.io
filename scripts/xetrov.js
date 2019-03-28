@@ -12,11 +12,23 @@ function showlist() {
     document.getElementById("langlist").classList.toggle("hide");
 }
 
+function changeLang(x){
+    document.getElementById("langlist").classList.toggle("hide");
+    $("." + main.lang).css("display", "none");
+    $("." + x).css("display","block");
+    main.lang = x;;
+    console.log(x)
+}
+
 var main = {
+    langs: ["en", "zh-han"],
     lang: "en",
     curPage: "home",
     init() {
         this.components.init();
+        for(var i = 0; i < this.langs.length; i++){
+            if (this.langs[i] != this.lang){$("." + this.langs[i]).css("display","none");}
+        }
     },
 
     changeContent(newContent) {
