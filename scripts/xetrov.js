@@ -21,7 +21,7 @@ function changeLang(x){
 }
 
 var main = {
-    langs: ["en", "zh-han"],
+    langs: ["en", "zh-han", "ko"],
     lang: "en",
     curPage: "home",
     init() {
