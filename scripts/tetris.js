@@ -20,10 +20,21 @@ var pieces = [
     [[0, 0], [0, -1], [1, -1], [-1, 0]], // Z
     [[0, 0], [0, 1], [0, -1], [1, 0]], // T
 
-]
+];
 
 function x() {
     console.log("Ran!");
+}
+
+function rotate(v, deg) {
+    var n = [];
+    for (var i = 0; i < 4; i++) {
+        var x = v[i][0];
+        var y = v[i][1];
+        var r = deg * 0.5 * Math.PI
+        n.push([Math.cos(r) * x - Math.sin(r) * y, Math.sin(r) * x + Math.cos(r) * y]);
+    }
+    return n;
 }
 class Board {
     constructor(id, isSelf) {
@@ -89,20 +100,16 @@ class Board {
             }
         }
         for (var i = 0; i < this.queuePieces.length; i++) {
-            this.drawPiece(this.queuectx, 30, 120 * i + 30, this.queuePieces[i], 3);
+            this.drawPiece(this.queuectx, 30, 120 * i + 30, this.queuePieces[i], this.currentRot);
         }
     }
 
     drawPiece(ctx, x, y, pieceId, rot) {
-        for (var i = 0; i < pieces[pieceId - 1][rot].length; i++) {
-            for (var j = 0; j < pieces[pieceId - 1][rot][0].length; j++) {
-                ctx.fillStyle = minoColors[pieces[pieceId - 1][rot][i][j]];
-                var propx = (i - offset[pieceId - 1][rot][0]) * 30 + x + ((pieceId == 1 && (rot % 2 == 0) ? (32) : (2)));
-                var propy = (j - offset[pieceId - 1][rot][1]) * 30 + y + 1;
-                ctx.fillRect((propx > 0) ? (propx) : (0), (propy > 0) ? (propy) : (0), 27, 27)
-            }
-        }
+        var piece = rotate(pieces[pieceId - 1], rot)
+        console.log(piece)
+        for (var i = 0; i < 4; i++) {
 
+        }
     }
 
     keypress(key) {
@@ -116,6 +123,12 @@ class Board {
                     break;
                 case "z":
                     this.currentRot = (this.currentRot + 1) % 4;
+                    break;
+                case "q":
+                    this.mainLoop();
+                    break;
+                default:
+                    console.log(key);
             }
         }
     }
@@ -123,7 +136,7 @@ class Board {
     mainLoop() {
         this.update();
         this.draw();
-        requestAnimationFrame(this.mainLoop);
+        //requestAnimationFrame(this.mainLoop);
     }
 }
 
@@ -131,11 +144,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
     var self = new Board(0, true);
     document.onkeydown = function (evt) {
         evt = evt || window.event;
-        x();
         if ("key" in evt) {
             self.keypress(evt.key);
         };
     };
-    x();
     requestAnimationFrame(self.mainLoop);
 });
