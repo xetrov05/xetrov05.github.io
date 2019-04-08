@@ -12,40 +12,22 @@
 </head>
 
 <body>
-    <div class="dropdown">
-        <button onclick="showlist()" class="drop">Set Language</button>
-        <div id="langlist" class="dropdown-content hide">
-            <a onclick="changeLang('en')">EN</a>
-            <a onclick="changeLang('zh-han')">中文（繁體）</a>
-            <a onclick="changeLang('ko')">한국어</a>
-        </div>
-    </div>
     <div id="sidenav" class="sidenav">
         <a href="#" id="navbar-home" class="en">Home</a>
-        <a href="#" id="navbar-home" class="zh-han">主頁</a>
-        <a href="#" id="navbar-home" class="ko">홈</a>
 
         <a href="#" id="navbar-jstris19" class="en">Jstris Spring '19 Tournament</a>
-        <a href="#" id="navbar-jstris19" class="zh-han">Xetrov 的 Jstris春天2019比賽</a>
-        <a href="#" id="navbar-jstris19" class="ko">제트 로프의 jstris 2019 토너먼트</a>
 
         <div class="en">
             <a href="#" id="navbar-jstris19info">Rules and Informaton</a>
             <a href="#" id="navbar-jstris19tables">Participants and Tables</a>
-        </div>
-        <div class="zh-han">
-            <a href="#" id="navbar-jstris19info">規則及資料</a>
-            <a href="#" id="navbar-jstris19tables">比賽參賽者及進度</a>
-        </div>
-        <div class="ko">
-            <a href="#" id="navbar-jstris19info">규칙과 관련 정보</a>
-            <a href="#" id="navbar-jstris19tables">참가자 및 테이블</a>
+            <a href="#" id="navbar-jstris19changelog">Change Log</a>
+            <a href="#" id="navbar-jstris19announcements">Announcements</a>
+
         </div>
 
         <!--a href="tetris.html" class="nil">Tetris Clone</a-->
         <a href="#" id="navbar-credits" class="en">Credits</a>
-        <a href="#" id="navbar-credits" class="zh-han">感謝</a>
-        <a href="#" id="navbar-credits" class="ko">크레딧</a>
+
     </div>
     <div id="main">
         <div id="content-area">
@@ -53,106 +35,50 @@
                 <div class="content-title en">
                     <div>Welcome</div>
                 </div>
-                <div class="content-title zh-han">
-                    <div>歡迎</div>
-                </div>
-                <div class="content-title ko">
-                    <div>환영합니다</div>
-                </div>
                 <p class="en">Welcome to this webpage for MY usage. MY usage. Do you hear that? Move along: Nothing to see here...
                 </p>
-                <p class="zh-han">歡迎來給我用的網站。給我用的。聽到了嗎？好…走吧…</p>
-                <p class="ko">제 웹페이지에 오신 걸 환영합니다. 여긴 아무것도 없으니 다른 곳으로 이동해주세요.</p>
             </div>
             <div id="content-jstris19" class="hide">
                 <div class="content-title en">
                     <div>Xetrov's Jstris Tournament 2019</div>
-                </div>
-                <div class="content-title zh-han">
-                    <div>Xetrov 的 Jstris春天2019比賽</div>
-                </div>
-                <div class="content-title ko">
-                    <div>Xetrov 의 Jstris 2019 토너먼트</div>
                 </div>
 
                 <div>
                     <p class="en">
                         Hello There! If you are here, then I am assuming you want to sign up to the tournament. More Information can be found by
                         navigating the navbar to the side.</p>
-                    <p class="zh-han">
-                        你好！如果你來看本網頁，表示你應該想登記參加我的「Jstris春天2019比賽」，對吧？如果是，請查看那邊的連結以獲取更多資訊。</p>
-                    <p class="ko">
-                        안녕하세요! 당신이 여기 있는건 제 토너먼트에 등록하고 싶기 때문인거죠? 왼쪽 목차를 통해 더 많은 정보를 얻을 수 있습니다.</p>
                 </div>
             </div>
             <div id="content-jstris19info" class="hide">
                 <div class="content-title en">
                     <div>Xetrov's Jstris Tournament 2019 - The Rules and relevant Informations </div>
                 </div>
-                <div class="content-title zh-han">
-                    <div>Xetrov 的 Jstris春天2019比賽 ～ 規則及資料</div>
-                </div>
-                <div class="content-title ko">
-                    <div>Xetrov의 jstris 2019 토너먼트 - 규칙과 관련 정보</div>
-                </div>
                 <div>
                     <div class="ssub-title en">
                         <div>Format</div>
                     </div>
-                    <div class="ssub-title zh-han">
-                        <div>比賽形式</div>
-                    </div>
-                    <div class="ssub-title ko">
-                        <div>방식</div>
-                    </div>
                     <p class="en">There will be two stages in the tournament:</p>
-                    <p class="zh-han">本次比賽分為兩段：</p>
-                    <p class="ko">토너먼트에는 두개의 스테이지가 있습니다</p>
                     <ol class="en">
                         <li>
                             <b>A group stage,</b> where participants are split into groups of 5*. The groups will be chosen
                             by me. I will put my best efforts to place a mix of players at different skill levels in each
                             group, and to split up players of the same skill level. Each group and it's players will be put
-                            in a table. Participants in each group will play each other EXACTLY once, first to 10. where
-                            a win awards 3 points, and a loss awards 1 point. When all players have played each of their
-                            matches, the top two* players with the most points will qualify to play in the second stage.
+                            in a table. Participants in each group will play one match with each other EXACTLY once, where
+                            the winner of each match is the first player to obtain 10 wins, where a win awards 3 points,
+                            and a loss awards 1 point. When all players have played all of their matches, the top three*
+                            players with the most points will qualify to play in the second stage.
                             </br>
                             <b>*</b>This is subject to change, depending on the number of entrants.
                         </li>
                         <li>
                             <b>A knockout stage,</b> where the qualifying players from Stage 1 will play. The layout will be
-                            single elimination until there are eight players left remaining, when the tournament will be
-                            double elimination. </li>
-                    </ol>
-                    <ol class="zh-han">
-                        <li>
-                            <b>第一段</b>、所有參賽者分為小組賽。每小組有5*個參賽者。每一個參賽者會跟其他在小組裡面的參賽者打一場（搶10）
-                            </br>
-                            <b>*</b>This is subject to change, depending on the number of entrants.
-                        </li>
-                        <li>
-                            <b>第二段</b>、第一段的最強兩位參賽者會出現至第二段。參賽者會打Knock Out Stage。（搶15，除了四強~搶20 和 決賽~搶25） </li>
-                    </ol>
-                    <ol class="ko">
-                        <li>
-                            각 그룹을 다섯명의 선수들로 나누는 스테이지* 그 그룹들은 제가 선택할 것이며, 저는 비슷한 실력을 가진 선수들을 같은 그룹에 배치하기 위해 최선을 다할 것입니다. 각 그룹의 선수들은 서로 10선승제로 경기를 하게 되며,
-                            이긴다면 3점, 진다면 1점을 얻게 됩니다. 각 그룹의 모든 선수들이 경기를 한 이후에 가장 많은 점수를 얻은 상위 2명*이 상위 스테이지에 진출할 수 있는 자격을 얻게
-                            됩니다. *참가자의 수에 따라 변경 될 수 있습니다.
-                        </li>
-                        <li>
-                            승자 진출 스테이지에서는, 8명의 선수가 남을때까지 일반적인 토너먼트 방식으로 진행이 되며, 8명이 남은 이후에는 *더블 엘리미네이션 토너먼트 방식으로 진행이 됩니다. *두 번을 지면 탈락하지만, 한 번을 지더라도 남은
-                            경기를 전부 승리하면 우승할 수 있는 토너먼트 방식입니다. 규칙
-                        </li>
+                            single elimination until there are eight players left remaining, where the tournament will become
+                            double elimination. Matches will be first to 15 until the semi finals, where it and the finals
+                            will be played as first to 20.</li>
                     </ol>
                 </div>
                 <div class="ssub-title en">
                     <div>Rules</div>
-                </div>
-                <div class="ssub-title zh-han">
-                    <div>規則</div>
-                </div>
-                <div class="ssub-title ko">
-                    <div>規則</div>
                 </div>
                 <ul class="en">
                     <li>
@@ -191,154 +117,376 @@
                             <a href="https://discord.gg/Sfkmf9P">https://discord.gg/Sfkmf9P</a>
                         </li>
                 </ul>
-                <ul class="zh-han">
-                    <li>
-                        所有戰局都會在
-                        <a href="https://www.jstris.jezevec10.com" target="_blank">Jstris</a>平台玩。
-
-                    </li>
-
-                    為了讓方便我排序比賽順序與級別，請登記此賽的玩家必須要有 備註 40L 競速 和 Ultra 模式的成績。
-                    <li>
-                        玩家們必須要能預定私下約時間打場合。每個禮拜的比賽期限會公告在此網站(所以請務必要在此留意) [跟在Discord公告]。如果有任何玩家沒辦法在期限內打完比賽(除非是對手沒出現等等情況)會被取消資格。
-                    </li>
-                    <li>
-                        玩家們必須要能預定私下約時間打場合。每個禮拜的比賽期限會公告在此網站(所以請務必要在此留意)
-                        <!--跟在Discord公告]-->。如果有任何玩家沒辦法在期限內打完比賽(除非是對手沒出現等等情況)會被取消資格。
-                    </li>
-                    <li>
-                        所有參賽者
-                        <b>必須</b>要有Jstris平台帳戶。登記表會要求這些資料的。
-                    </li>
-                    <li>打完場合之後，請報告結果給我，用本網頁提一個方法聯絡。</li>
-                    <li>
-                        如果你需要聯絡我，請使用Discord："xetrov#0272”
-                    </li>
-                    <li>
-                        為了讓大家方便預定私下約時間打場合，我建議各位參賽者加入這伺服器
-                        <a href="https://discord.gg/Sfkmf9P">https://discord.gg/Sfkmf9P</a>
-                    </li>
-                </ul>
-                <ul class="ko">
-                    <li>
-                        모든 게임은
-                        <a href="https://www.jstris.jezevec10.com" target="_blank">Jstris</a> 에서 진행됩니다.
-                    </li>
-
-                    <li>가입 자격을 얻으려면 Jstris 계정에 Ultra 점수와 40L 스프린트 기록이 있어야 합니다.(40L 스프린트와 Ultra 점수으로 그룹이 결정됩니다.)</li>
-                    <li>
-                        경기 일정은 선수들에 의해 결정되며 마감일만 지켜주시면 됩니다.(마감일은 본 웹사이트에 게시될 것이며, Discord에 공지할 것입니다.) 분명한 잘못이 없는 경우(즉 상대가 결석한 경우)가 아니면 마감 전에 모든 경기를
-                        하지 못한 선수는 즉시 실격 처리됩니다.
-                    </li>
-                    <li>
-                        모든 선수들은 Jstris 계정을 가지고 있어야 합니다. 이것은 당신이 Google Form를 통해 토너먼트에 등록할 때 요청될 것입니다.
-                    </li>
-                    <li>
-                        전달 사항이 있거나 경기 점수를 보고할 땐 Discord："xetrov#0272” 를 통해 연락해 주십시오.
-                    </li>
-                    <li>打完場合之後，請報告結果給我，用本網頁提一個方法聯絡。</li>
-                    <li>
-                        모든 선수는 이 디스코드 서버에 가입할 것을 권합니다. https://discord.gg/Sfkmf9P
-                    </li>
-                </ul>
-                <p class="en">Are you happy with how this tournament will proceed? If so, please sign up here:</p>
-                <p class="zh-han">想參加嗎？如果是，請在這裡登記</p>
-                <p class="ko">이번 대회의 진행에 만족하십니까? 그렇다면 여기를 통해 등록하세요!:</p>
-
-                <a class="en" href="https://docs.google.com/forms/d/1ddIwl17RQWqZF_xvjCixToN2kqNQ4WEQynVIeZ4FTCw">English</a>
-                <br />
-                <a class="zh-han" href="https://docs.google.com/forms/d/1UU4dKoR1hysmNrEsLcSzszxaHSXRRpOFsSb85e-6Ykc/">中文（繁體）</a>
-                <a class="ko" href="https://forms.gle/HuuXt5p7ERmQMfyT6">한국어</a>
-
-                <p class="en">Please note that the registration deadline is Monday 8th April 2019 17:00 (UTC)</p>
-                <p class="zh-han">請注意：此賽登記的期限為4月8日（週一）17:00 (UTC)</p>
-                <p class="ko">등록 마감일은 2019년 4월 9일 오전 0시까지입니다.</p>
-
             </div>
             <div id="content-jstris19tables" class="hide">
                 <div class="content-title en">
                     <div>Xetrov's Jstris Tournament 2019 - Partcipants and Progress </div>
                 </div>
-                <div class="content-title zh-han">
-                    <div>Xetrov 的 Jstris春天2019比賽 ～ 比賽參賽者及進度</div>
+                <div>
+                    <div class="ssub-title"> 1</div>
                 </div>
-                <div class="content-title ko">
-                    <div>Xetrov 的 Jstris春天2019比賽 ～ 比賽參賽者及進度</div>
-                </div>
+                <br />
                 <table>
                     <tr>
-                        <th>&darr;left ; right&rarr;</th>
-                        <th>Participant 1</th>
-                        <th>Participant 2</th>
-                        <th>Participant 3</th>
-                        <th>Participant 4</th>
-                        <th>Participant 5</th>
+                        <th></th>
+                        <th>ChokladTomte</th>
+                        <th>Dagero</th>
+                        <th>DoubleRandom</th>
+                        <th>ducklife4player</th>
+                        <th>Essigschurke</th>
+                        <th>Zack101155</th>
+                        <th>
+                            <p class="en">Points</p>
+                        </th>
                     </tr>
                     <tr>
-                        <td>Participant 1</td>
+                        <td>ChokladTomte</td>
                         <td>X</td>
-                        <td>v</td>
-                        <td>v</td>
-                        <td>v</td>
-                        <td>v</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>0</td>
                     </tr>
                     <tr>
-                        <td>Participant 2</td>
-                        <td>v</td>
+                        <td>Dagero</td>
+                        <td></td>
                         <td>X</td>
-                        <td>v</td>
-                        <td>v</td>
-                        <td>v</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>0</td>
                     </tr>
                     <tr>
-                        <td>Participant 3</td>
-                        <td>v</td>
-                        <td>v</td>
+                        <td>DoubleRandom</td>
+                        <td></td>
+                        <td></td>
                         <td>X</td>
-                        <td>v</td>
-                        <td>v</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>0</td>
                     </tr>
                     <tr>
-                        <td>Participant 4</td>
-                        <td>v</td>
-                        <td>v</td>
-                        <td>v</td>
+                        <td>ducklife4player</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td>X</td>
-                        <td>v</td>
+                        <td></td>
+                        <td></td>
+                        <td>0</td>
                     </tr>
                     <tr>
-                        <td>Participant 5</td>
-                        <td>v</td>
-                        <td>v</td>
-                        <td>v</td>
-                        <td>v</td>
+                        <td>Essigschurke</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td>X</td>
+                        <td></td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Zack101155</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>X</td>
+                        <td>0</td>
 
                     </tr>
+                </table>
+                <br />
+                <div>
+                    <div class="ssub-title"> 2</div>
+                </div>
+                <br />
+                <table>
                     <tr>
-                        <td>Wins</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
+                        <th></th>
+                        <th>cheep</th>
+                        <th>Rutabaga</th>
+                        <th>Rywee</th>
+                        <th>Salubris</th>
+                        <th>xetrov</th>
+                        <th>
+                            <p class="en">Points</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>cheep</td>
+                        <td>X</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td>0</td>
                     </tr>
+                    <tr>
+                        <td>Rutabaga</td>
+                        <td></td>
+                        <td>X</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Rywee</td>
+                        <td></td>
+                        <td></td>
+                        <td>X</td>
+                        <td></td>
+                        <td></td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Salubris</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>X</td>
+                        <td></td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Xetrov</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>X</td>
+                        <td>0</td>
+
+                    </tr>
                 </table>
+                <br />
+                <div>
+                    <div class="ssub-title"> 3</div>
+                </div>
+                <br />
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Dalicious</th>
+                        <th>LennyKappa</th>
+                        <th>magmajp</th>
+                        <th>noelnadal</th>
+                        <th>Zenasis</th>
+                        <th>
+                            <p class="en">Points</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>Dalicious</td>
+                        <td>X</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>LennyKappa</td>
+                        <td></td>
+                        <td>X</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>magmajp</td>
+                        <td></td>
+                        <td></td>
+                        <td>X</td>
+                        <td></td>
+                        <td></td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>noelnadal</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>X</td>
+                        <td></td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Zenasis</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>X</td>
+                        <td>0</td>
+
+                    </tr>
+                </table>
+                <br />
+                <div>
+                    <div class="ssub-title">4</div>
+                </div>
+                <br />
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>CosmicWolf</th>
+                        <th>MIKAMI</th>
+                        <th>Rivilclia</th>
+                        <th>Svenne</th>
+                        <th>TinkThank</th>
+                        <th>
+                            <p class="en">Points</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>CosmicWolf</td>
+                        <td>X</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>MIKAMI</td>
+                        <td></td>
+                        <td>X</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Rivilclia</td>
+                        <td></td>
+                        <td></td>
+                        <td>X</td>
+                        <td></td>
+                        <td></td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Svenne</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>X</td>
+                        <td></td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>TinkThank</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>X</td>
+                        <td>0</td>
+
+                    </tr>
+                </table>
+                </br>
+                <div>
+                    <div class="ssub-title"> 5</div>
+                </div>
+                <br />
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Eddie</th>
+                        <th>FlamingShuriken</th>
+                        <th>kimarle</th>
+                        <th>ModestTomato</th>
+                        <th>Tetrian22</th>
+                        <th>
+                            <p class="en">Points</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>Eddie</td>
+                        <td>X</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>FlamingShuriken</td>
+                        <td></td>
+                        <td>X</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>kimarle</td>
+                        <td></td>
+                        <td></td>
+                        <td>X</td>
+                        <td></td>
+                        <td></td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>ModestTomato</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>X</td>
+                        <td></td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Tetrian22</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>X</td>
+                        <td>0</td>
+
+                    </tr>
+                </table>
+                </br>
+            </div>
+            <div id="content-jstris19changelog" class="hide">
+                <div class="content-title en">
+                    <div>Change Log</div>
+                </div>
+                <ul class="en">
+                    <li>
+                        <b>08/04/2019:</b> Removed translations, and officially launched tables. Minor corrections in text.
+                    </li>
+                </ul>
+            </div>
+            <div id="content-jstris19announcements" class="hide">
+                <div class="content-title en">
+                    <div>Announcements</div>
+                </div>
+                <ul class="en">
+                    <li>
+                        <b>08/04/2019:</b> Tournament Tables are officially open!
+                        <b>You have until
+                            <i>Tuesday 7 May 2019 5:00 UTC</i> to play all of your matches!</b>
+                    </li>
+                </ul>
             </div>
             <div id="content-credits" class="hide">
                 <div class="content-title en">
                     <div>Thanks to:</div>
                 </div>
-                <div class="content-title zh-han">
-                    <div>感謝:</div>
-                </div>
                 <p class="en">
                     Thanks to Pokedialga for helping me translate into Chinese, and kimarle for helping me translate into Korean</p>
-                <p class="zh-han">感謝 Pokedialga 幫我翻譯成中文和 kimarle 幫我翻譯成韓語</p>
-                <p class="ko">
-                    <p>Pokedialga님께 중국어로 번역해주셔서 감사의 말씀을 드립니다.</p>
-                    <p>kimarle님께 한국어로 번역해주셔서 감사의 말씀을 드립니다.</p>
-                </p>
             </div>
         </div>
     </div>
