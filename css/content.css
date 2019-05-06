@@ -11,7 +11,7 @@
 }
 
 .sub-title div{
-    font-size: 30px;
+    font-size: 40px;
     padding: 15px 0;
 }
 
@@ -37,5 +37,8 @@
 #content-jstris19tables table, th, td{
     border: 1px solid black;  
     text-align: center;
-    text-emphasis: bold;
 }
+
+#content-jstris19tables .groupstage table tr :last-child{
+    font-weight: bold;
+} 

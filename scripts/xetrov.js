@@ -58,6 +58,11 @@ var main = {
             if (sectionsId.includes(start)) {
                 main.changeContent(start);
             }
+
+            x = $("#content-jstris19tables .groupstage table td");
+            for (var i = 0; i < x.length; i++){
+                console.log(x[i].text);    
+            }
         },
 
         navbar: {
