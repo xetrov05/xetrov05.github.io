@@ -18,25 +18,25 @@ newPiece();
 var keydowns = [];
 var timeOuts = [];
 
-function keyPress(e) {
+function keyPress(e)
+{
     if (e.repeat) return;
     keydowns.push(e.key)
     switch (e.key) {
         case "f":
             field.forEach((n) => { console.log(n) })
             break;
-        case "l":
-            console.log(`${currentBlockX} , ${currentBlockY}`);
-            break;
         case "z":
 
             if (keydowns.includes("c") || keydowns.includes("x")) return;
             var valid = true
-            getPos(currentBlockX, currentBlockY, ((n) => {
+            getPos(currentBlockX, currentBlockY, ((n) =>
+            {
                 return (n + 3) % 4
             })(currentBlockRot))
-                .forEach((i) => {
-                    valid = (field[i[1]]) ? (field[i[1]][i[0]] === 0 && valid) : (false);
+                .forEach((i) =>
+                {
+                    valid = (field[21 - i[1]]) ? (field[21 - i[1]][i[0]] === 0 && valid) : (false);
                 })
 
             if (valid) {
@@ -49,11 +49,13 @@ function keyPress(e) {
         case "x":
             if (keydowns.includes("z") || keydowns.includes("c")) return;
             var valid = true
-            getPos(currentBlockX, currentBlockY, ((n) => {
+            getPos(currentBlockX, currentBlockY, ((n) =>
+            {
                 return (n + 2) % 4
             })(currentBlockRot))
-                .forEach((i) => {
-                    valid = (field[i[1]]) ? (field[i[1]][i[0]] === 0 && valid) : (false);
+                .forEach((i) =>
+                {
+                    valid = (field[21 - i[1]]) ? (field[21 - i[1]][i[0]] === 0 && valid) : (false);
                 })
 
             if (valid) {
@@ -65,11 +67,13 @@ function keyPress(e) {
         case "c":
             if (keydowns.includes("z") || keydowns.includes("x")) return;
             var valid = true
-            getPos(currentBlockX, currentBlockY, ((n) => {
+            getPos(currentBlockX, currentBlockY, ((n) =>
+            {
                 return (n + 1) % 4
             })(currentBlockRot))
-                .forEach((i) => {
-                    valid = (field[i[1]]) ? (field[i[1]][i[0]] === 0 && valid) : (false);
+                .forEach((i) =>
+                {
+                    valid = (field[21 - i[1]]) ? (field[21 - i[1]][i[0]] === 0 && valid) : (false);
                 })
 
             if (valid) {
@@ -82,8 +86,9 @@ function keyPress(e) {
             var active = true
             while (active) {
                 getPos(currentBlockX, currentBlockY - 1, currentBlockRot)
-                    .forEach((i) => {
-                        active = (field[i[1]]) ? (field[i[1]][i[0]] === 0 && active) : (false);
+                    .forEach((i) =>
+                    {
+                        active = (field[21 - i[1]]) ? (field[21 - i[1]][i[0]] === 0 && active) : (false);
                     })
 
                 if (active) {
@@ -93,12 +98,14 @@ function keyPress(e) {
             lock();
             break;
         case "ArrowUp":
-            const softDrop = () => {
+            const softDrop = () =>
+            {
                 if (!keydowns.includes("ArrowUp")) return;
                 var valid = true
                 getPos(currentBlockX, currentBlockY - 1, currentBlockRot)
-                    .forEach((i) => {
-                        valid = (field[i[1]]) ? (field[i[1]][i[0]] === 0 && valid) : (false);
+                    .forEach((i) =>
+                    {
+                        valid = (field[21 - i[1]]) ? (field[21 - i[1]][i[0]] === 0 && valid) : (false);
                     })
                 if (valid) { currentBlockY-- }
                 setTimeout(softDrop, arr)
@@ -111,12 +118,14 @@ function keyPress(e) {
             console.log(getPos(currentBlockX, currentBlockY, currentBlockRot))
             break;
         case "ArrowLeft":
-            const moveLeft = (isDas) => {
+            const moveLeft = (isDas) =>
+            {
                 if (keydowns.includes("ArrowRight") || !keydowns.includes("ArrowLeft")) return;
                 var valid = true
                 getPos(currentBlockX - 1, currentBlockY, currentBlockRot)
-                    .forEach((i) => {
-                        valid = (field[i[1]]) ? (field[i[1]][i[0]] === 0 && valid) : (false);
+                    .forEach((i) =>
+                    {
+                        valid = (field[21 - i[1]]) ? (field[21 - i[1]][i[0]] === 0 && valid) : (false);
                     })
                 if (valid) {
                     currentBlockX--
@@ -138,12 +147,14 @@ function keyPress(e) {
             moveLeft(true)
             break;
         case "ArrowRight":
-            const moveRight = (isDas) => {
+            const moveRight = (isDas) =>
+            {  
                 if (keydowns.includes("ArrowLeft") || !keydowns.includes("ArrowRight")) return;
                 var valid = true
                 getPos(currentBlockX + 1, currentBlockY, currentBlockRot)
-                    .forEach((i) => {
-                        valid = (field[i[1]]) ? (field[i[1]][i[0]] === 0 && valid) : (false);
+                    .forEach((i) =>
+                    {
+                        valid = (field[21 - i[1]]) ? (field[21 - i[1]][i[0]] === 0 && valid) : (false);
                     })
                 if (valid) {
                     currentBlockX++
@@ -167,7 +178,8 @@ function keyPress(e) {
     }
 }
 
-function reset() {
+function reset()
+{
     field = [
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -194,30 +206,37 @@ function reset() {
     draw();
 }
 
-function lock() {
+function lock()
+{
     getPos(currentBlockX, currentBlockY, currentBlockRot)
-        .forEach((i) => {
-            field[i[1]][i[0]] = currentBlock;
+        .forEach((i) =>
+        {
+            field[21 - i[1]][i[0]] = currentBlock;
         })
     var clears = []
-    for (var i = 0; i < 20; i++) {
+    for (var i = 0; i < 22; i++) {
         if (!field[i].includes(0)) {
             clears.push(i);
         }
     }
 
-    clears.reverse().forEach((row) => {
+    clears.reverse().forEach((row) =>
+    {
         field.splice(row, 1);
     })
 
-    clears.forEach((row) => {
-        field.push([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+    clears.forEach((row) =>
+    {
+        field.unshift([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
     })
+
+    console.log(clears)
     newPiece();
     draw();
 }
 
-function createBag() {
+function createBag()
+{
     var bag = [];
     while (bag.length < 7) {
         var x = Math.floor((Math.random() * 7) + 1);
@@ -228,22 +247,23 @@ function createBag() {
     return bag;
 }
 
-function newPiece() {
+function newPiece()
+{
     if (queue.length < 1) {
         createBag().forEach((i) => queue.push(i));
-        console.log("run")
     }
 
     currentBlock = queue[0];
     queue.splice(0, 1);
 
     currentBlockX = 3;
-    currentBlockY = 18;
+    currentBlockY = 19;
     currentBlockRot = 0;
 }
 
 
-function draw() {
+function draw()
+{
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = 'rgb(0, 0, 0)';
     for (var i = 1; i <= 600; i += 30) {
@@ -254,44 +274,47 @@ function draw() {
         ctx.strokeRect(j - 0.5, -0.5, 30, 602);
     }
 
-    for (var k = 0; k < 20; k++) {
+    for (var k = 2; k < 22; k++) {
         for (var l = 0; l < 10; l++) {
             ctx.fillStyle = colors[field[k][l]];
-            ctx.fillRect(l * 30 + 2, (19 - k) * 30 + 2, 27, 27);
+            ctx.fillRect(l * 30 + 2, (k - 2) * 30 + 2, 27, 27);
         }
     }
-    
+
     var x = blocks[currentBlock - 1][currentBlockRot]
-    console.clear()
-    
-    // for (var i = 0; i < x.length; i++) {
-    //     for (var j = 0; j < x[i].length; j++) {
-    //         if (x[0 - i][j] !== 0) {
-    //             console.log(`${19 - currentBlockY - i} , ${currentBlockX + j} `)
-    //             ctx.fillStyle = colors[x[0 - i][j]];
-    //             ctx.fillRect((currentBlockX + j) * 30 + 2, (18 - currentBlockY - i) * 30 + 2, 27, 27);
-    //         }
-    //     }
-    // }
+
+    for (var i = 0; i < x.length; i++) {
+        for (var j = 0; j < x[i].length; j++) {
+            if (x[i][j] !== 0) {
+                var m = currentBlockX + j;
+                var n = 19 - currentBlockY + i
+                ctx.fillStyle = colors[x[i][j]];
+                ctx.fillRect((m) * 30 + 2, (n) * 30 + 2, 27, 27);
+            }
+        }
+    }
 }
 
-function getPos(offX, offY, rot) {
+function getPos(offX, offY, rot)
+{
     var t = []
     var x = blocks[currentBlock - 1][rot];
     for (var i = 0; i < x.length; i++) {
         for (var j = 0; j < x[i].length; j++) {
             var y = x[i][j];
             if (y !== 0) {
-                t.push([j + offX, i + offY])
+                t.push([j + offX, offY - i])
             }
         }
     }
     return (t)
 }
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', (event) =>
+{
     reset();
     document.addEventListener('keydown', keyPress);
-    document.addEventListener('keyup', (event) => {
+    document.addEventListener('keyup', (event) =>
+    {
         if (!event.repeat) {
             for (var i = 0; i < keydowns.length; i++) {
                 if (keydowns[i] === event.key) {
